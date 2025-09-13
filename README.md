@@ -1,6 +1,7 @@
 # 🌌 ASTRA – Generative AI for Youth Mental Wellness   
 
-![Gen AI Hackathon](./unnamed.png)  
+![Gen AI Hackathon](<img width="1440" height="600" alt="unnamed" src="https://github.com/user-attachments/assets/180f0d26-e238-4a08-b8c2-9ff02ddf89b7" />
+)  
 
 ## ✨ Overview  
 Astra is an **AI-powered 3D avatar companion** built to support **youth mental wellness**.  
