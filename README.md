@@ -1,8 +1,7 @@
 # 🌌 ASTRA – Generative AI for Youth Mental Wellness   
 
-<p align="center">
-  <img src=""C:\Users\DELL\Downloads\unnamed.png"" alt="Gen AI Hackathon" width="800"/>
-</p> 
+
+<img width="1440" height="600" alt="unnamed" src="https://github.com/user-attachments/assets/c04a676d-b8ad-48ca-9a55-0e0c6c97ceae" />
 
 
 
