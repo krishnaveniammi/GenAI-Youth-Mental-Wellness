@@ -1,0 +1,151 @@
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+  background-color: #0a0f1a;
+  color: #fff;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* LEFT SIDE (Avatar) */
+#avatar-container {
+  width: 40vw;
+  height: 100vh;
+  background-color: #1f1f2e;
+}
+
+#renderCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* RIGHT SIDE (Chat Content) */
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #0d1424;
+  padding: 20px;
+  position: relative;
+}
+
+.greeting-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.greeting-center h2 {
+  font-size: 2rem;
+  color: #00c8ff;
+  text-shadow: 0 0 15px #00c8ff;
+}
+
+.greeting-center p {
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* Scrollable response box */
+.scroll-box {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  margin-bottom: 70px; /* push above input */
+  font-size: 16px;
+  line-height: 1.6;       /* ✅ better spacing between lines */
+  white-space: pre-wrap;  /* ✅ preserve spaces & line breaks */
+  word-wrap: break-word;  /* ✅ wrap long words cleanly */
+}
+
+.hidden {
+  display: none;
+}
+
+/* ✅ Fixed Bottom Input Section */
+.input-section {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  border: 1px solid #00c8ff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+textarea {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  background: transparent;
+  color: #fff;
+}
+
+#sendButton {
+  padding: 12px 20px;
+  background: linear-gradient(90deg, #00c8ff, #0070ff);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#sendButton:hover {
+  background: linear-gradient(90deg, #00e1ff, #0090ff);
+}
+
+/* ✅ Typing animation effect */
+.message.typing {
+  font-size: 18px;
+  color: #00c8ff;
+  letter-spacing: 2px;
+  display: flex;
+  gap: 3px;
+}
+
+.message.typing span {
+  animation: blink 1.2s infinite;
+  opacity: 0;
+}
+
+.message.typing span:nth-child(1) {
+  animation-delay: 0s;
+}
+.message.typing span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.message.typing span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%, 20% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}

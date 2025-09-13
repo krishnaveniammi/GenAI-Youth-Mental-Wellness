@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Astra Chat</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.babylonjs.com/babylon.js"></script>
+  <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- LEFT: Avatar -->
+    <div id="avatar-container">
+      <canvas id="renderCanvas"></canvas>
+    </div>
+
+    <!-- RIGHT: Chatbot -->
+    <div class="content">
+      <!-- Centered Greeting -->
+      <div id="greetingBox" class="greeting-center">
+        <h2>Hey there, I am Astra!</h2>
+        <p>How can I help you today?</p>
+      </div>
+
+      <!-- Scrollable response (initially hidden) -->
+      <div id="responseBox" class="scroll-box hidden"></div>
+
+      <!-- ✅ New Bottom Input Section -->
+      <section class="input-section">
+        <div class="input-wrapper">
+          <textarea id="userInput" placeholder="Type your message here..."></textarea>
+          <button id="sendButton">Send</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/static/avatar.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>
