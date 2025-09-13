@@ -1,20 +1,24 @@
 from flask import Flask, render_template, request, jsonify
 import os, time, re
-import google.generativeai as genai # type: ignore
-from gtts import gTTS # type: ignore
-from googleapiclient.discovery import build # type: ignore
-from config import GEMINI_KEY, YOUTUBE_KEY  
+import google.generativeai as genai  # type: ignore
+from gtts import gTTS  # type: ignore
+from googleapiclient.discovery import build  # type: ignore
 
 app = Flask(__name__, static_folder="static")
 
 # ===== Configure Gemini + YouTube =====
+GEMINI_KEY = os.environ.get("GEMINI_KEY")
+YOUTUBE_KEY = os.environ.get("YOUTUBE_KEY")
+
+if not GEMINI_KEY or not YOUTUBE_KEY:
+    raise RuntimeError("❌ Missing API keys. Set GEMINI_KEY and YOUTUBE_KEY as environment variables.")
+
 genai.configure(api_key=GEMINI_KEY)
 model = genai.GenerativeModel("gemini-1.5-flash")
 youtube = build("youtube", "v3", developerKey=YOUTUBE_KEY)
 
 
 # ===== Utility Functions =====
-
 def clean_for_tts(text: str):
     """Remove emojis, links & special chars before TTS."""
     text = re.sub(r"http\S+", "", text)               # remove URLs
@@ -102,7 +106,6 @@ def synthesize_speech(text, lang="en", filename=None):
 
 
 # ===== Routes =====
-
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -125,4 +128,6 @@ def chat():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
+
