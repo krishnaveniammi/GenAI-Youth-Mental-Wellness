@@ -1,6 +1,7 @@
 # 🌌 ASTRA – Generative AI for Youth Mental Wellness   
 
-![<img width="1440" height="600" alt="unnamed" src="https://github.com/user-attachments/assets/180f0d26-e238-4a08-b8c2-9ff02ddf89b7" /]
+<img width="1440" height="600" alt="unnamed" src="https://github.com/user-attachments/assets/e34a92d5-4f30-4806-97a0-6d4003e85b8f" />
+
 
 
 ## ✨ Overview  
